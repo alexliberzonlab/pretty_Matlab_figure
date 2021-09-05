@@ -1,0 +1,38 @@
+Concept:
+
+-The export_fig function purpose is just to make sure that the export (conversion) to PDF (or any other format that it support) from your MATLAB fig. will go smoothly...
+ (MATLAB export functions don't work so well, especially if the fig. is complex (numerous curves and such). 
+ Therefor the fig. must be "pretty" before it is exported. (see "how to use export_fig" below) 
+
+-Tips for "pretty" fig. in matlab:
+
+	1. use the function setdef, this function set default setting for plot functions in MATLAB, simply call the function BEFORE you plot the fig. by...
+	   writing  "setdef()" in a previous line. The setdef setting are set for a double column paper, where the fig size is a single column (2 figs side by...
+	   side will have a page width). (setdef was created by Erez Benjamin to meet Slava's requirement for Figs.)
+	
+	2. set the background color white, when fig is open, set(gcf,"color","w"), probably can incorporate this into seddef.
+
+	3. Try to use colors that have only one non-zero value in the RGB, like [0,0,139]-this is dark blue. if you need more colors, look online for some RGB...
+	   values for nice gentle-smooth colors, try not to use too bright colors (in the documentation of MAPLE they have a lot of nice ones).
+
+	4. If you need additional markers, like zoom in view box, text box arrows etc. try to use matlab for it, make sure you work with the fig in it's original...	
+	   size.
+
+-How to use export_fig:
+
+	1. first download and install ghostscript: http://www.ghostscript.com and  you might need also Xpdf package: http://www.xpdfreader.com  (better not the change...
+	   the default locations of the installations, because than you will need to guide export_fig to its location)
+
+	2. to export: when the fig is ready and open in matlab (at it's proper size), direct matlab to the location of export_fig, than write in the command line:
+	   export_fig fig_name.pdf -painters
+	   the fig. will be saved in the directory where export_fig is located, in PDF format. the -painters is the rendering option I usually use.
+
+	3. all can be found here: https://www.mathworks.com/matlabcentral/fileexchange/23629-export_fig
+	   examples and more info can be found at: https://github.com/altmany/export_fig/blob/master/README.md
+
+ 
+
+		
+
+ 
+
